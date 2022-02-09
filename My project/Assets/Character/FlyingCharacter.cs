@@ -30,8 +30,9 @@ public class FlyingCharacter : MonoBehaviour
         // speed = speed * Input.GetAxis("Vertical");
      
         transform.Translate(speed * Time.deltaTime);       
-        float avgTriggers = 1f-(Input.GetAxis("RightTrigger") + Input.GetAxis("LeftTrigger")) / 2f;
+        float avgTriggers = (Input.GetAxis("RightTrigger") + Input.GetAxis("LeftTrigger")) / 2f;
         avgTriggerDisplay.text = avgTriggers.ToString();
+        avgTriggers = 1f - avgTriggers;
         /*
         if (avgTriggers > PreviousAvgTrigger)
             {
